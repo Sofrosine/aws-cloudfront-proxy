@@ -2,32 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  font-size: 16px; /* Default base size */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #a6a6a6;
+  padding: 0;
+  padding-bottom: 4px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #0d0d0d;
+  background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: inherit !important;
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+input[type="text"] {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  background-color: transparent;
+}
+
+button {
+  background-color: #55a605;
+  padding: 0.875rem 1.5rem;
+  border-radius: 1.625rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: #55a605;
+}
+
+button:hover {
+  background-color: #488c04;
+}
+
+.circular-progress {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border: 3px solid #55A605; /* Progress color */
+  border-top: 3px solid transparent; /* Hide top border */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Animation duration and timing */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* Full rotation */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+.navbar-gradient-background {
+  background: rgb(72, 140, 4);
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    180deg,
+    rgba(72, 140, 4, 1) 7%,
+    rgba(85, 166, 5, 1) 30%,
+    rgba(191, 217, 98, 1) 88%
+  );
 }
